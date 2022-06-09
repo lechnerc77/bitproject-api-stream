@@ -1,0 +1,10 @@
+### Good request
+POST http://localhost:7071/api/BlogPostPublisher
+
+{
+    "repoowner": "lechnerc77",
+    "reponame": "bitproject-api-stream"
+}
+
+### Provoke error
+POST http://localhost:7071/api/BlogPostPublisher
