@@ -57,11 +57,11 @@ module.exports = async function (context, req) {
             let devToResponseBody;
 
             if (devToResponse.status === 201) {
-                context.log(`Blog post published at dev.to with status: ${devToResponse.status}`);
                 devToResponseBody = await devToResponse.json();
 
                 responseStatus = devToResponse.status;
                 responseMessage = `Blog post published at dev.to. Check the post on your dashboard https://dev.to/dashboard (preliminary URL: ${devToResponseBody.url})`;
+                context.log(responseMessage);
             }
 
             else {

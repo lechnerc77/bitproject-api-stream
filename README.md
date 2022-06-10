@@ -432,11 +432,12 @@ module.exports = async function (context, req) {
             let devToResponseBody;
 
             if (devToResponse.status === 201) {
-                context.log(`Blog post published at dev.to with status: ${devToResponse.status}`);
                 devToResponseBody = await devToResponse.json();
 
                 responseStatus = devToResponse.status;
                 responseMessage = `Blog post published at dev.to. Check the post on your dashboard https://dev.to/dashboard (preliminary URL: ${devToResponseBody.url})`;
+                context.log(responseMessage);
+
             }
 
             else {
@@ -457,7 +458,6 @@ module.exports = async function (context, req) {
 ...
 
 }
-
 ```
 
 > Unfortunately the dev.to API does not return a valid URL for draft blog post. You can try that out by using the corresponding URL provided by the dev.to call.
@@ -516,11 +516,11 @@ module.exports = async function (context, req) {
             let devToResponseBody;
 
             if (devToResponse.status === 201) {
-                context.log(`Blog post published at dev.to with status: ${devToResponse.status}`);
                 devToResponseBody = await devToResponse.json();
 
                 responseStatus = devToResponse.status;
                 responseMessage = `Blog post published at dev.to. Check the post on your dashboard https://dev.to/dashboard (preliminary URL: ${devToResponseBody.url})`;
+                context.log(responseMessage);
             }
 
             else {
